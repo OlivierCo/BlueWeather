@@ -1,0 +1,29 @@
+<div class="topBox">
+	<div class="city">&#8249; {{name}} &#8250;</div>
+</div>
+<div class="centralBox">
+	<div class="temp">
+		<div class="max">
+			<div class="smallTempMax">{{#getCelcius main.temp_max}}{{/getCelcius}}</div>
+			<div class="wi-up"></div>
+		</div>
+		<div class="min">
+			<div class="wi-down"></div>
+			<div class="smallTemp">{{#getCelcius main.temp_min}}{{/getCelcius}}</div>
+		</div>
+	</div>
+	<div class="celcius">{{#getCelcius main.temp}}{{/getCelcius}}&#176;</div>
+	<div class="desc">{{#desc weather}}{{/desc}}</div>
+	<div class="wCurrent wi-{{#loop weather}}{{/loop}}"></div>
+	<div class="windos {{#windDir wind.deg}}{{/windDir}}"></div>
+	<div class="wi-strong-wind"> {{#mToKm wind.speed}}{{/mToKm}} KM/H</div>
+	<div class="small wi-04n"></div>
+	<div class="wiCloud">{{clouds.all}}%</div>
+	<div class="wi-sprinkles"></div>
+	<div class="humidity">{{main.humidity}}%</div>
+</div>
+<div class="forecast">
+	{{#each next.list}}
+		{{nextIcon}}
+	{{/each}}
+</div>
